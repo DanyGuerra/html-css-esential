@@ -7,6 +7,7 @@
 
 html{
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body{
@@ -20,8 +21,18 @@ a{
 
 header{
   font-size:14px;
-  color:var(--gray10)
+  width:188px;
+  color:var(--gray10);
+  position:absolute;
+  top:64px;
+  left:-232px;
+  z-index: 1;
 }
+
+header li{
+  margin-bottom:16px;
+}
+
 
 header a{
   color: var(--gray10);
@@ -34,15 +45,16 @@ header a:hover{
 
 nav details summary{
   font-weight: bold;
+  line-height: 24px;
 }
 
 h1{
   font-size:60px;
   margin-top: 64px;
   margin-bottom:16px;
+  font-weight: normal;
   /* margin-left: 20px;
   margin-right: 10px; */
-
 }
 
 h1 ~ p{
@@ -64,10 +76,64 @@ h3{
   margin-top: 16px;
   margin-bottom: 24px;
   font-weight: normal;
+  position:sticky;
+  top:0;
+  background:white;
+}
+
+pre{
+  background: #FEC62E;
+  /* margin: 40px; */
+  padding: 40px;
+  /* padding-left: 40px; */
+  font-family: 'Roboto';
+  line-height:24px;
+}
+
+blockquote{
+  font-size: 24px;
+  margin-top: 32px 0;
+  padding-left: 16px;
+  line-height: 24px;
+  border-left: 4px solid var(--gray30);
+}
+
+blockquote span{
+  color:var(--gray10);
+}
+
+.header{
+  position:sticky;
+  top:0;
+}
+
+
+
+
+.debug{
+  background: red;
+}
+
+/* .header{
+  position:relative;
+} */
+
+.header-content{
+  position:relative;
+}
+
+.wrapper{
+  background:white;
+  width:902px;
+  margin:auto;
+}
+
+.main-content{
+  background:white;
 }
 
 .section-content:first-of-type{
-  background:red;
+  /* background:red; */
   margin:0;
 }
 
@@ -81,10 +147,6 @@ h3{
 
 .section-content ol li{
   line-height: 24px;
-}
-
-.blockquote{
-  margin-top: 32px 0;
 }
 
 .hero{
@@ -112,21 +174,24 @@ h3{
 
 .section-content h3{
   counter-increment: titleList;
+  padding-bottom: 8px;
 }
 
 
 .section-content h3::before{
   /* content: counter(titleList,upper-roman) */
-  content: "-" counter(titleList) "-";
+  content: counter(titleList) ". ";
 }
 
 .section-content h3::after{
   content: '';
-  width: 32px;
+  width: 80px;
   height: 4px;
   background: black;
   display: inline-block;
-
+  position: absolute;
+  left: 0;
+  bottom:0;
 }
 
 ::selection{
