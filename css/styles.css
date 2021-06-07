@@ -1,5 +1,8 @@
 :root {
   font-size: 18px;
+  --gray30: #212121;
+  --gray20:#212429;
+  --gray10:#616161;
 }
 
 html{
@@ -8,23 +11,24 @@ html{
 
 body{
   color: #212121;
+  font-family: 'Roboto', sans-serif;
 }
 a{
-  color: #212121;
+  color: var(--gray30);
 }
 
 header{
   font-size:14px;
-  color:#616161
+  color:var(--gray10)
 }
 
 header a{
-  color: #616161;
+  color: var(--gray10);
   text-decoration:none;
 }
 
 header a:hover{
-  color: #212121;
+  color: #8888ff;
 }
 
 nav details summary{
@@ -40,5 +44,42 @@ h2{
 }
 h3{
   font-size:1.5em;
+}
+
+.hero{
+  /* background: #8888ff; */
+  background-image: linear-gradient(to top,rgba(255,255,255,0.3) ,transparent),  url(../images/patron-1.png); /*usamos transparente para el degradado*/
+  /* background-image: linear-gradient(to top,rgba(255,255,255,0.3),red 20px,transparent),  url(../images/patron-1.png); */
+  /* background-repeat: no-repeat; */
+  /* background-position: left 50px bottom 100px; */
+  /* background-size: cover; */
+  height: 350px;
+}
+
+.section-content{
+  counter-reset:titleList;
+}
+
+.section-content h3{
+  counter-increment: titleList;
+}
+
+
+.section-content h3::before{
+  /* content: counter(titleList,upper-roman) */
+  content: "-" counter(titleList) "-";
+}
+
+.section-content h3::after{
+  content: '';
+  width: 32px;
+  height: 4px;
+  background: black;
+  display: inline-block;
+
+}
+
+::selection{
+ background:#ddddff;
 }
 
