@@ -42,7 +42,6 @@ h1{
   margin-bottom:16px;
   /* margin-left: 20px;
   margin-right: 10px; */
-
 }
 
 h1 ~ p{
@@ -66,8 +65,44 @@ h3{
   font-weight: normal;
 }
 
+pre{
+  background: #FEC62E;
+  /* margin: 40px; */
+  padding: 40px;
+  /* padding-left: 40px; */
+  font-family: 'Roboto';
+  line-height:24px;
+}
+
+blockquote{
+  font-size: 24px;
+  margin-top: 32px 0;
+  padding-left: 16px;
+  line-height: 24px;
+  border-left: 4px solid var(--gray30);
+}
+
+blockquote span{
+  color:var(--gray10);
+}
+
+.main{
+  background-image: linear-gradient(to top,rgba(255,255,255,0.3) ,transparent),  url(../images/patron-1.png);
+}
+
+.wrapper{
+  background:white;
+  width:902px;
+  margin:auto;
+}
+
+.main-content{
+
+  background:gray;
+}
+
 .section-content:first-of-type{
-  background:red;
+  /* background:red; */
   margin:0;
 }
 
@@ -81,10 +116,6 @@ h3{
 
 .section-content ol li{
   line-height: 24px;
-}
-
-.blockquote{
-  margin-top: 32px 0;
 }
 
 .hero{
@@ -112,12 +143,13 @@ h3{
 
 .section-content h3{
   counter-increment: titleList;
+  padding-bottom: 4px;
 }
 
 
 .section-content h3::before{
   /* content: counter(titleList,upper-roman) */
-  content: "-" counter(titleList) "-";
+  content: counter(titleList) ". ";
 }
 
 .section-content h3::after{
@@ -126,7 +158,6 @@ h3{
   height: 4px;
   background: black;
   display: inline-block;
-
 }
 
 ::selection{
