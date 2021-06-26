@@ -125,7 +125,7 @@ blockquote span{
 
 .wrapper{
   background:white;
-  width:902px;
+  max-width:902px;
   margin:auto;
 
 }
@@ -198,5 +198,9 @@ blockquote span{
 
 ::selection{
  background:#ddddff;
+}
+
+.content .img-big{
+  max-width: 100%;
 }
 
